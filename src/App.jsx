@@ -1,17 +1,5 @@
-const CATEGORIES = ['Hats', 'Jackets', 'Sneakers', 'Womens', 'Mens'];
+import Directory from './components/Directory';
 
-const App = () => (
-  <div className="categories-container">
-    {CATEGORIES.map((cat) => (
-      <div key={cat} className="category-container">
-        {/* <img /> */}
-        <div className="category-body-container">
-          <h2>{cat}</h2>
-          <button>Shop Now</button>
-        </div>
-      </div>
-    ))}
-  </div>
-);
+const App = () => <Directory />;
 
 export default App;
