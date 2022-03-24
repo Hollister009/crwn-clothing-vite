@@ -4,6 +4,7 @@
     "es2021": true
   },
   "extends": [
+    "airbnb",
     "eslint:recommended",
     "plugin:react/recommended",
     "plugin:prettier/recommended"
@@ -18,7 +19,10 @@
   "plugins": ["react"],
   "rules": {
     "react/react-in-jsx-scope": "off",
-    "prettier/prettier": ["error", {"singleQuote": true, "parser": "flow"}],
-    "no-unused-vars": "warn"
+    "react/function-component-definition": "off",
+    "react/jsx-props-no-spreading": "off",
+    "no-restricted-exports": "off",
+    "no-unused-vars": "warn",
+    "import/prefer-default-export": "off"
   }
 }
