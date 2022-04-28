@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import './Category.scss';
 
 const Category = ({ title, imageUrl }) => (

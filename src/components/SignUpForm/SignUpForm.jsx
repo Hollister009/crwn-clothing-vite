@@ -5,6 +5,9 @@ import {
   createUserDocumentFromAuth,
 } from '../../firebase/firebase.utils';
 
+import FormInput from '../FormInput';
+import Button from '../Button';
+
 import './SignUpForm.scss';
 
 const defaultFormFields = {
@@ -46,51 +49,34 @@ const SignUpForm = () => {
     setFormFields((prevState) => ({ ...prevState, [name]: value }));
   };
 
+  const formInputFields = [
+    {
+      id: 'displayName',
+      label: 'Display Name',
+      type: 'text',
+      name: 'displayName',
+      value: displayName,
+    },
+    { id: 'email', label: 'Email', type: 'email', name: 'email', value: email },
+    { id: 'password', label: 'Password', type: 'password', name: 'password', value: password },
+    {
+      id: 'confirmPassword',
+      label: 'ConfirmPassword',
+      type: 'password',
+      name: 'confirmPassword',
+      value: confirmPassword,
+    },
+  ];
+
   return (
     <div className="sign-up-container">
-      <h2>Sign up with your email and password</h2>
+      <h2>Don&apos;t have an account yet?</h2>
+      <span>Sign up with your email and password</span>
       <form action="POST" onSubmit={handleSubmit}>
-        <label htmlFor="displayName">Display Name</label>
-        <input
-          id="displayName"
-          type="text"
-          name="displayName"
-          value={displayName}
-          onChange={handleChange}
-          required
-        />
-
-        <label htmlFor="email">Email</label>
-        <input
-          id="email"
-          type="email"
-          name="email"
-          value={email}
-          onChange={handleChange}
-          required
-        />
-
-        <label htmlFor="password">Password</label>
-        <input
-          id="password"
-          type="password"
-          name="password"
-          value={password}
-          onChange={handleChange}
-          required
-        />
-
-        <label htmlFor="confirmPassword">Confirm Password</label>
-        <input
-          id="confirmPassword"
-          type="password"
-          name="confirmPassword"
-          value={confirmPassword}
-          onChange={handleChange}
-          required
-        />
-
-        <button type="submit">Sign Up</button>
+        {formInputFields.map((field) => (
+          <FormInput key={field.id} onChange={handleChange} required {...field} />
+        ))}
+        <Button type="submit">Sign Up</Button>
       </form>
     </div>
   );
