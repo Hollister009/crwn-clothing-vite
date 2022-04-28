@@ -23,6 +23,9 @@
     "react/jsx-props-no-spreading": "off",
     "no-restricted-exports": "off",
     "no-unused-vars": "warn",
-    "import/prefer-default-export": "off"
+    "import/prefer-default-export": "off",
+    "jsx-a11y/label-has-associated-control": "off",
+    "no-alert": "off",
+    "no-console": "off"
   }
 }

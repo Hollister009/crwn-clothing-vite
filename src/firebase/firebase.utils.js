@@ -60,5 +60,8 @@ export const createUserDocumentFromAuth = async (userAuth, additionalInfo = {}) 
 export const createAuthUserWithEmailAndPassword = async (email, password) => {
   if (!email || !password) return;
 
-  return await createUserWithEmailAndPassword(auth, email, password);
+  const result = await createUserWithEmailAndPassword(auth, email, password);
+
+  // eslint-disable-next-line consistent-return
+  return result;
 };

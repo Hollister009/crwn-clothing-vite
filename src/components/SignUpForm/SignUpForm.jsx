@@ -32,7 +32,7 @@ const SignUpForm = () => {
       await createUserDocumentFromAuth(user, { displayName });
     } catch (error) {
       if (error.code === 'auth/email-already-in-use') {
-        alert('Can\'t create a user, email already in use');
+        alert("Can't create a user, email already in use");
       }
       console.error('User creation encountered an error', error.message);
     } finally {
